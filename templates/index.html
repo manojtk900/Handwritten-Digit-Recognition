@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Handwritten Digit Recognition
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>
+        🔢 Handwritten Digit Recognition
+    </h1>
+
+    <p class="subtitle">
+        Convolutional Neural Network + MNIST
+    </p>
+
+
+    <!-- ================================================== -->
+    <!-- UPLOAD IMAGE -->
+    <!-- ================================================== -->
+
+    <div class="card">
+
+        <h2>
+            📤 Upload a Digit Image
+        </h2>
+
+        <p>
+            Select an image containing one handwritten digit.
+        </p>
+
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+        >
+
+
+        <div class="preview-container">
+
+            <img
+                id="preview"
+                alt="Image Preview"
+            >
+
+        </div>
+
+
+        <button
+            id="uploadPredictBtn"
+        >
+            Detect Uploaded Image
+        </button>
+
+    </div>
+
+
+    <!-- ================================================== -->
+    <!-- DRAW DIGIT -->
+    <!-- ================================================== -->
+
+    <div class="card">
+
+        <h2>
+            ✏️ Or Draw a Digit
+        </h2>
+
+        <p>
+            Draw a number from 0 to 9.
+        </p>
+
+
+        <canvas
+            id="canvas"
+            width="280"
+            height="280"
+        ></canvas>
+
+
+        <div class="buttons">
+
+            <button
+                id="predictBtn"
+            >
+                Predict Drawing
+            </button>
+
+
+            <button
+                id="clearBtn"
+                class="clear"
+            >
+                Clear
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================== -->
+    <!-- RESULT -->
+    <!-- ================================================== -->
+
+    <div
+        id="resultCard"
+        class="card result-card"
+    >
+
+        <h2>
+            🎯 Prediction Result
+        </h2>
+
+
+        <div
+            id="digit"
+            class="digit"
+        >
+            ?
+        </div>
+
+
+        <div
+            id="confidence"
+            class="confidence"
+        >
+            Upload or draw a digit
+        </div>
+
+
+        <div
+            id="probabilities"
+            class="probabilities"
+        ></div>
+
+    </div>
+
+
+    <!-- ================================================== -->
+    <!-- PROJECT INFORMATION -->
+    <!-- ================================================== -->
+
+    <div class="information">
+
+        <h3>
+            Project Information
+        </h3>
+
+        <p>
+            <strong>Deep Learning:</strong>
+            Convolutional Neural Network
+        </p>
+
+        <p>
+            <strong>Dataset:</strong>
+            MNIST
+        </p>
+
+        <p>
+            <strong>Training Images:</strong>
+            60,000
+        </p>
+
+        <p>
+            <strong>Testing Images:</strong>
+            10,000
+        </p>
+
+        <p>
+            <strong>Classes:</strong>
+            0 – 9
+        </p>
+
+        <p>
+            <strong>Input Size:</strong>
+            28 × 28 grayscale
+        </p>
+
+    </div>
+
+
+    <p class="footer">
+
+        Handwritten Digit Recognition using CNN
+
+    </p>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+</body>
+
+</html>
